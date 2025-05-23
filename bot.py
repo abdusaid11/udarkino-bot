@@ -2,7 +2,7 @@ import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 BOT_TOKEN = "7517455172:AAHTHMHSvqIvgvjlgg1B-ncWC9_Lj4DPf_s"
-CHANNEL_ID = -1744686998
+SOURCE_CHANNEL = "@sam_uzbekistan"  # Username orqali ishlatilyapti
 CHECK_CHANNEL = "@kinolarningudari"
 
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -35,7 +35,7 @@ def film_handler(message):
         try:
             bot.copy_message(
                 chat_id=message.chat.id,
-                from_chat_id=CHANNEL_ID,
+                from_chat_id=SOURCE_CHANNEL,  # Kanal username
                 message_id=films[code]
             )
         except Exception as e:
